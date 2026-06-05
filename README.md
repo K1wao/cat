@@ -1,1 +1,3 @@
-Simple arch "auto" system update and clean up script (idk what im doing)
+I dont know what im doing but guess what...
+
+Cats are cool!
