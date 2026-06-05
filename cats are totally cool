@@ -1,20 +1,18 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
-echo "Updating system"
+echo "Updating"
 sudo pacman -Syu --noconfirm
 
-echo "Checking for orphaned packages"
+echo "Looking for orphans"
 orphans=$(pacman -Qdtq || true)
 if [[ -n "$orphans" ]]; then
     echo "Removing orphaned packages"
     sudo pacman -Rns $orphans --noconfirm
 else
-    echo "No orphaned packages found."
+    echo "No orphans"
 fi
 
-echo "Cleaning package cache"
+echo "Cleaning cache"
 yes | sudo pacman -Sc             
-#Its either yes or --noncomfirm, depends on pacman version or something i think
 
-echo "Maintenance complete"
+echo "Done"
